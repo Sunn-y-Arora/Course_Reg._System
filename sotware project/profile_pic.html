@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile Picture</title>
+</head>
+<body>
+<form action="profile_pic.php" method="post" enctype="multipart/form-data">   
+  <?php
+    $res=$db->query($pull);
+    $pics=$res->fetch_assoc();
+    echo '<div class="imgLow">';
+    echo "<img src='upload/$pics[url]' alt='profile picture' width='80' height='64'   class='doubleborder'/></div>";
+   
+    ?>
+   
+    <input type="file" name="file" />
+    <input type="submit" name="pupload" class="button" value="Upload"/>
+  
+</form>
+</body>
+</html>
